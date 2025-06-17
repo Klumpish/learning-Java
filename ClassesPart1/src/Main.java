@@ -18,7 +18,16 @@ public class Main {
 //        targa.setConvertible(false);
 //        targa.setColor("red");
 //        targa.describeCar();
+//        BankAccount bankAccount = new BankAccount(123, 24.2, "Heffa",
+//          "Heffa@Heffa.com", "888-888-555");
         BankAccount bankAccount = new BankAccount();
-        
+        System.out.println(bankAccount.getAccNumber());
+        System.out.println(bankAccount.getBalance());
+        System.out.println(bankAccount.getEmail());
+
+        BankAccount timsAccount = new BankAccount("tim", "Tim@tim.com",
+          "555-555-5555");
+        System.out.println(
+          "AccountNo: " + timsAccount.getAccNumber() + "; name " + timsAccount.getName());
     }
 }
