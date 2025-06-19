@@ -29,12 +29,10 @@ public class Main {
 
         String formattedString = String.format("Your age is %d", age);
         System.out.println(formattedString);
+//        works the same
+        formattedString = "Your age is %d".formatted(age);
+        System.out.println(formattedString);
 
-        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9,
-          10);
-        numbers.stream()
-               .filter(even -> even % 2 == 0)
-               .map(even -> even * even)
-               .forEach(System.out::println);
+        
     }
 }
