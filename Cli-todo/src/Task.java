@@ -14,6 +14,15 @@ public class Task {
         this.creationDate = LocalDate.now();
     }
 
+    public Task(String description, UUID uuid, LocalDate creationDate,
+                boolean isCompleted) {
+        this.description = description;
+        this.uuid = uuid;
+        this.creationDate = creationDate;
+        this.isCompleted = isCompleted;
+    }
+
+
     public String getDescription() {
         return description;
     }
@@ -31,7 +40,8 @@ public class Task {
     }
 
     public void markComplete() {
-        this.isCompleted = true;
+        this.isCompleted = !isCompleted;
+
     }
 
 
