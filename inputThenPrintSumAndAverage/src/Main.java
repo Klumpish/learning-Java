@@ -6,6 +6,7 @@ public class Main {
     }
 
     public static void inputThenPrintSumAndAverage() {
+
         Scanner scanner = new Scanner(System.in);
 
         int countInputs = 0;
@@ -31,4 +32,6 @@ public class Main {
             System.out.println("SUM = " + sum + " AVG = " + avg);
         }
     }
+
+
 }
