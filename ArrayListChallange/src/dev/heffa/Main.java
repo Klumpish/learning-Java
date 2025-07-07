@@ -40,6 +40,8 @@ public class Main {
     private static void add(ArrayList<String> shoppingList) {
         System.out.println("Add to shopping list. eg(apple,oranges,cookies)");
         Scanner scanner = new Scanner(System.in);
+//        could have used
+//        String[] userInput = scanner.nextLine().split(",");
         String userInput = scanner.nextLine();
 
         String[] userInputArray = userInput.split(",");
