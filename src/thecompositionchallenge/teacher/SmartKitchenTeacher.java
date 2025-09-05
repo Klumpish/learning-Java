@@ -1,17 +1,17 @@
-package thecompositionchallenge;
+package thecompositionchallenge.teacher;
 
 public class SmartKitchenTeacher {
-    private CoffeeMaker brewMaster;
+    private CoffeeMaker1 brewMaster;
     private Refrigerator iceBox;
     private DishWasher dishWasher;
 
     public SmartKitchenTeacher() {
-        brewMaster = new CoffeeMaker();
+        brewMaster = new CoffeeMaker1();
         iceBox = new Refrigerator();
         dishWasher = new DishWasher();
     }
 
-    public CoffeeMaker getBrewMaster() {
+    public CoffeeMaker1 getBrewMaster() {
         return brewMaster;
     }
 
@@ -23,8 +23,7 @@ public class SmartKitchenTeacher {
         return dishWasher;
     }
 
-    public void setKitchenState(boolean coffeeFlag,
-                                boolean fridgeFlag,
+    public void setKitchenState(boolean coffeeFlag, boolean fridgeFlag,
                                 boolean dishWasherFlag) {
         brewMaster.setHasWorkToDo(coffeeFlag);
         iceBox.setHasWorkToDo(fridgeFlag);
@@ -38,7 +37,7 @@ public class SmartKitchenTeacher {
     }
 }
 
-class CoffeeMaker {
+class CoffeeMaker1 {
     private boolean hasWorkToDo;
 
     public void setHasWorkToDo(boolean hasWorkToDo) {

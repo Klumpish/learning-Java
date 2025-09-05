@@ -1,10 +1,10 @@
 package linkedlistchallenge;
 
-public class Place {
+public class PlaceClass {
     private String name;
     private double distance;
 
-    public Place(String name, double distance) {
+    public PlaceClass(String name, double distance) {
         this.name = name;
         this.distance = distance;
     }

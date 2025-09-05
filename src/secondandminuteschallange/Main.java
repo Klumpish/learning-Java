@@ -13,7 +13,7 @@ public class Main {
     public static String getDurationString(int seconds) {
 
         if (seconds < 0) {
-         return "the input in seconds can not be negative " + seconds;
+            return "the input in seconds can not be negative " + seconds;
         }
 
         int minutes = seconds / 60;
@@ -22,7 +22,7 @@ public class Main {
 
     public static String getDurationString(int minutes, int seconds) {
 
-        if (minutes < 0){
+        if (minutes < 0) {
             return "the input in minutes can not be negative " + minutes;
         }
         if (seconds < 0 || seconds > 59) {
@@ -35,15 +35,16 @@ public class Main {
         return hours + "h " + remainingMinutes + "m " + seconds + "s";
 
     }
-    public static void printYearsAndDays(long minutes){
+
+    public static String printYearsAndDays(long minutes) {
         if (minutes < 0) {
-            System.out.println("Invalid Value");
-            return;
+
+            return "Invalid Value";
         }
 
         long day = minutes / (60 * 24); // 1 day  = 1440 minutes
         long year = day / 365;
         long remaningDays = day % 365;
-        System.out.println(minutes + " min = " + year + " y and "+remaningDays+" d");
+        return minutes + " min = " + year + " y and " + remaningDays + " d";
     }
 }

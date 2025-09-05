@@ -6,6 +6,22 @@ An abstract class is a class that's incomplete
 you cant create an instance of an abstract class ()
 it can still have a constructor which will be called by its subclasses
  */
+
+abstract class Mammal extends Animal {
+    // animal is abstract, Mammal is also abstract
+    public Mammal(String type, String size, double weight) {
+        super(type, size, weight);
+    }
+
+    @Override
+    public void move(String speed) {
+        System.out.print(getExplicitType() + " galloop ");
+        System.out.println(speed.equals("slow") ? "walks" : "Runs");
+    }
+
+    public abstract void shedHair();
+}
+
 public abstract class Animal {
     protected String type;
     private String size;
@@ -26,6 +42,10 @@ public abstract class Animal {
     public abstract void move(String speed);
 
     public abstract void makeNoise();
+
+    public final String getExplicitType() {
+        return getClass().getSimpleName() + " (" + type + ")";
+    }
 
     /* an abstract method tells the world that all Animals
     will move

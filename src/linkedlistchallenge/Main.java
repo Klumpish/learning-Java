@@ -17,18 +17,18 @@ record Place(String name, int distance) {
 public class Main {
     public static void main(String[] args) {
 
-        LinkedList<Place> placesToVisit = new LinkedList<>();
+        LinkedList<PlaceClass> placesToVisit = new LinkedList<>();
 
-        Place adelaide = new Place("Adelaide", 1374);
-        Place adelaide2 = new Place("adelaide", 1374);
+        PlaceClass adelaide = new PlaceClass("Adelaide", 1374);
+        PlaceClass adelaide2 = new PlaceClass("adelaide", 1374);
         addPlace(placesToVisit, adelaide);
         addPlace(placesToVisit, adelaide2);
-        addPlace(placesToVisit, new Place("Brisbane", 917));
-        addPlace(placesToVisit, new Place("Perth", 3923));
-        addPlace(placesToVisit, new Place("Alice Springs", 2771));
-        addPlace(placesToVisit, new Place("Darwin", 3972));
-        addPlace(placesToVisit, new Place("Melbourne", 877));
-        placesToVisit.addFirst(new Place("Sydney", 0));
+        addPlace(placesToVisit, new PlaceClass("Brisbane", 917));
+        addPlace(placesToVisit, new PlaceClass("Perth", 3923));
+        addPlace(placesToVisit, new PlaceClass("Alice Springs", 2771));
+        addPlace(placesToVisit, new PlaceClass("Darwin", 3972));
+        addPlace(placesToVisit, new PlaceClass("Melbourne", 877));
+        placesToVisit.addFirst(new PlaceClass("Sydney", 0));
         System.out.println(placesToVisit);
 
         var iterator = placesToVisit.listIterator();
@@ -47,7 +47,9 @@ public class Main {
                 forward = false;
             }
             System.out.println("Enter Value: ");
-            String menuItem = scanner.nextLine().toUpperCase().substring(0, 1);
+            String menuItem = scanner.nextLine()
+                                     .toUpperCase()
+                                     .substring(0, 1);
 
             switch (menuItem) {
                 case "F":
@@ -87,29 +89,30 @@ public class Main {
         }
     }
 
-    private static void addPlace(LinkedList<Place> list, Place place) {
+    private static void addPlace(LinkedList<PlaceClass> list, PlaceClass placeClass) {
 
-        if (list.contains(place)) {
-            System.out.println("Found duplicate: " + place);
+        if (list.contains(placeClass)) {
+            System.out.println("Found duplicate: " + placeClass);
             return;
         }
 
-        for (Place p : list) {
-            if (p.name().equalsIgnoreCase(place.name())) {
-                System.out.println("Found duplicate: " + place);
+        for (PlaceClass p : list) {
+            if (p.getName()
+                 .equalsIgnoreCase(placeClass.getName())) {
+                System.out.println("Found duplicate: " + placeClass);
                 return;
             }
         }
         int matchedIndex = 0;
         for (var listPlace : list) {
-            if (place.distance() < listPlace.distance()) {
-                list.add(matchedIndex, place);
+            if (placeClass.getDistance() < listPlace.getDistance()) {
+                list.add(matchedIndex, placeClass);
                 return;
             }
             matchedIndex++;
 
         }
-        list.add(place);
+        list.add(placeClass);
     }
 
     private static void printMenu() {
